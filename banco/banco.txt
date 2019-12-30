@@ -1,0 +1,60 @@
+//SQL SERVER
+
+//MYSQL SERVER
+create database NFV;
+
+use NFV;
+
+create table fornecedor(
+id_for int primary key AUTO_INCREMENT not null,
+rs_for varchar (255),
+cnpj_for char(14),
+cep_for char(8),
+end_for varchar (100),
+email_for varchar(100),
+senha_for varchar(50)
+);
+
+create table comprador(
+id_com int primary key AUTO_INCREMENT,
+nome_com varchar (50),
+snome_com varchar(50),
+cep_com char(8),
+end_com varchar (100),
+email_com varchar(100),
+senha_com varchar(50) 
+);
+
+create table marca(
+id_mar int primary key AUTO_INCREMENT not null,
+nome_mar varchar(50)
+);
+
+create table modelo(
+id_mod int primary key AUTO_INCREMENT not null,
+id_mar int not null,
+nome_mod varchar(50),
+foreign key (id_mar) references marca (id_mar)
+);
+
+create table imagem(
+id_ima int primary key auto_increment not null,
+nome_ima varchar(50),
+cam_ima varchar(255)
+)
+
+create table peca(
+id_pec int primary key AUTO_INCREMENT not null,
+id_for int not null,
+id_mar int not null,
+id_mod int not null,
+nome_pec varchar(50),
+des_pec varchar(255),
+ano_pec char(4),
+val_pec varchar(10),
+id_ima int not null,
+foreign key (id_for) references fornecedor(id_for),
+foreign key (id_mar) references marca(id_mar),
+foreign key (id_mod) references modelo(id_mod),
+foreign key (id_ima) references imagem(id_ima)
+);

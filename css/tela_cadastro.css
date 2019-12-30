@@ -1,0 +1,204 @@
+/* BODY */
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/bg-login.jpg) center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 75px 0;
+}
+
+/* ALERTA */
+.alerta{
+    position: absolute;
+    top: 0;
+    background: #fff;
+    border-radius: 100px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+    opacity: 0;
+    animation: alerta 3s ease;
+}
+
+.alerta p{
+    white-space: nowrap;
+    margin: 10px 25px;
+}
+
+/* CADASTRO */
+.cadastro{
+    width: 400px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 25px;
+}
+
+.cadastro h3{
+    color: #ef473a;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0 0 5px 25px;
+}
+
+/* conta */
+.cadastro .conta{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cadastro .conta .opcao input[type=checkbox]{
+    width: 0;
+    height: 0;
+    transform: scale(0);
+}
+
+.cadastro .conta .opcao label{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #ef473a;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    border: 2px solid #ef473a;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10px 12px;
+    transition: .3s all;
+}
+
+.label-active{
+    width: 280px!important;
+    color: #fff!important;
+    background: #ef473a;
+}
+
+.cadastro .conta .opcao label i{
+    margin-right: 15px;
+}
+
+/* info */
+.cadastro .info{
+    width: 100%;
+    display: none;
+    padding: 0 10px;
+}
+
+.cadastro .info.fornecedor{
+    display: flex;
+}
+
+.cadastro .info .campo:last-child{
+    margin-bottom: 0;
+}
+
+.cadastro .info .desativado{
+    pointer-events: none;
+}
+
+.cadastro .info .desativado input{
+    background: #eee;
+    border: none;
+}
+
+/* status */
+.cadastro .info .campo .status{
+    position: absolute;
+    flex-direction: row;
+    transform: translate(-40px, -10px);
+}
+
+.cadastro .info .campo .status i{
+    position: absolute;
+    color: #ef473a;
+    transition: .3s all;
+}
+
+.cadastro .info .campo .status i.desativado{
+    opacity: 0;
+    transform: translateY(5px);
+}
+
+.cadastro .info .campo .status i:nth-child(2){
+    animation: cnpj 1s ease infinite;
+}
+
+/* fornecedor */
+.cadastro .fornecedor .campo:nth-child(1){
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* comprador */
+.cadastro .comprador .campo:nth-child(4){
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+/* MEDIAS */
+@media(max-height: 500px){
+    /* BODY */
+    body{
+        padding: 50px 0;
+    }
+    /* CADASTRO */
+    .cadastro{
+        height: 500px;
+        overflow-y: auto;
+    }
+    .cadastro input[type=submit]{
+        min-height: 45px;
+    }
+
+}
+
+@media(max-width: 500px){
+    /* CADASTRO */
+    .cadastro{
+        width: 320px;
+    }
+    .label-active{
+        width: 200px!important;
+    }
+}
+
+/* KEYFRAMES */
+@keyframes alerta{
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    10%{
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    90%{
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+@keyframes cnpj{
+    0%{
+        transform: scale(.7);
+    }
+
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(.7);
+    }
+}

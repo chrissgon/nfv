@@ -1,0 +1,453 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600&display=swap');
+
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, main{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box!important;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+form, article, aside, details, figcaption, main, figure,
+footer, header, hgroup, menu, nav, section, div, a{
+	display: flex;
+	flex-direction: column;
+}
+body{
+    position: relative;
+    font-family: "Montserrat";
+    overflow-x: hidden;
+}
+ol, ul{
+	list-style: none;
+}
+blockquote, q{
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after{
+	content: '';
+	content: none;
+}
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1, h2, h3, h4, h5, h6, p{
+	line-height: 2;
+}
+
+/* MODAL */
+.container-modal{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    z-index: 2;
+}
+
+.modal{
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.modal > .info, .modal > .header{
+    width: 100%;
+    padding: 25px;
+}
+
+/* header */
+.modal .header{
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3rem;
+    background: url(../img/bg-modal.png) #ef473a;
+    background-size: cover;
+    clip-path: ellipse(100% 70% at 50% 30%);
+}
+
+.modal .header p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.modal .header i{
+    color: #ef473a;
+    font-size: 30px;
+    background: #fff;
+    border-radius: 100%;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* footer */
+.modal .footer{
+    width: 400px;
+    height: 50px;
+    position: fixed;
+    background: #fff;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, .2);
+    transform: translateY(400px);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+/* BTN-FLOAT */
+.btn-float{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 5%;
+    left: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ef473a;
+    background: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+/* NAV */
+.btn-menu{
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    color: #ef473a;
+    background: #fff;
+    border-radius: 100px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    padding: 5px 25px;
+    z-index: 1;
+}
+
+.menu{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, .3);
+    overflow: hidden;
+    overflow-y: auto;
+    transform: translateX(-250px);
+    transition: .3s all cubic-bezier(0.215, 0.610, 0.355, 1);
+    z-index: 1;
+}
+
+.menuIn{
+    transform: translateX(0)!important;
+}
+
+/* header */
+.menu .header{
+    width: 100%;
+    height: 175px;
+    align-items: center;
+    background: #111;
+    padding: 25px;
+}
+
+.menu .header .opcoes{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu .header .opcoes > i{
+    color: #fff;
+    cursor: pointer;
+    transition: .1s all;
+}
+
+.menu .header .info{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 15px;
+}
+
+.menu .header .info .nome{
+    font-size: 1.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.menu .header .info .email{
+    font-size: .8rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* guia */
+.menu .guia{
+    width: 100%;
+    padding: 25px;
+}
+
+.menu h3{
+    color: #aaa;
+}
+
+.menu .aba{
+    width: 100%;
+    height: 30px;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 5px 0 25px 0;
+    transition: .1s all;
+}
+
+.aba-ativa{
+    color: #ef463ade!important;
+}
+
+.menu .aba > i{
+    font-size: 24px;
+    margin-right: 25px;
+}
+
+/* footer */
+.menu .footer{
+    width: 100%;
+    padding: 25px;
+    padding-bottom: 0;
+}
+
+/* CONTAINER */
+.container{
+    width: 100%;
+    padding: 25px;
+}
+
+/* FORMULARIOS */
+.campo{
+    width: 100%;
+}
+
+.campo.invisivel{
+    display: none;
+}
+
+.campo.desativado{
+    pointer-events: none;
+}
+
+.campo.desativado input{
+    background: #eee;
+}
+
+.campo:nth-child(odd){
+    margin: 25px 0;
+}
+
+/* geral */
+.campo input, .campo textarea{
+    width: 100%;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #eee;
+    outline: none;
+    box-sizing: border-box;
+    padding: 15px 15px;
+    transition: .3s all;
+}
+
+.campo input:focus, .campo textarea:focus{
+    border-bottom-color: #ef473a;
+}
+
+.campo input:disabled, .campo textarea:disabled{
+    background: #eee;
+}
+
+/* textarea */
+.campo textarea{
+    height: 100px;
+}
+
+/* select */
+.campo .select{
+    flex-direction: row;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.campo .select input{
+    cursor: pointer;
+}
+
+.campo .select i{
+    position: absolute;
+    color: #aaa;
+    transform: translate(-15px, 15px);
+    transition: .2s all;
+}
+
+.arrow-rotate{
+    transform: translate(-15px, 15px) rotate(180deg)!important;
+}
+
+/* option */
+.campo .option{
+    max-height: 150px;
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+    overflow: hidden;
+    overflow-y: auto;
+    transform: translateY(80px);
+    transition: .3s all;
+    z-index: 2;
+}
+
+.view-option{
+    display: flex!important;
+}
+
+.campo .option p{
+    min-height: 50px;
+    width: 100%;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10px 25px;
+}
+
+.campo .option p:hover{
+    background: #eee;
+}
+
+/* range */
+input[type=range]{
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 15px 0;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track{
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    border-radius: 100px;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: #EF473A;
+    border-radius: 100%;
+    box-shadow: 0 0 3px #EF473A;
+    cursor: pointer;
+    margin-top: -10px;
+    -webkit-appearance: none;
+    z-index: 1;
+}
+
+input[type=range]::-moz-range-track{
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    border-radius: 100px;
+}
+
+input[type=range]::-moz-range-thumb{
+    width: 20px;
+    height: 20px;
+    background: #EF473A;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-top: -10px;
+    -webkit-appearance: none;
+}
+
+/* submit */
+input[type=submit], button{
+    width: 100%;
+    min-height: 45px;
+    max-height: 45px;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    font-weight: 500;
+    background: #ef473a;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    outline: none;
+    margin: 25px 0;
+}
+
+/* DESATIVADO */
+.desativado{
+    pointer-events: none;
+    opacity: .5;
+}
+
+/* MEDIAS */
+@media(max-width: 1000px){
+    /* NAV */
+    .btn-menu{
+        display: flex;
+    }
+}
+
+@media(max-width: 500px){
+    /* MODAL */
+    .modal{
+        width: 100%!important;
+    }
+    /* footer */
+    .modal .footer{
+        width: 100%;
+    }
+}
+
+/* #cb2d3e, #ef473a */
